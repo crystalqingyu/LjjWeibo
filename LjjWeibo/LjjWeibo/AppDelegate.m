@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LjjTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // 显示状态栏
+    application.statusBarHidden = NO;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[LjjTabBarViewController alloc] init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

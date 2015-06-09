@@ -10,8 +10,12 @@
 		3C9CDEA91B267EE70046F3DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDEA81B267EE70046F3DD /* main.m */; };
 		3C9CDEAC1B267EE70046F3DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDEAB1B267EE70046F3DD /* AppDelegate.m */; };
 		3C9CDEB41B267EE70046F3DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C9CDEB31B267EE70046F3DD /* Images.xcassets */; };
-		3C9CDEB71B267EE70046F3DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C9CDEB51B267EE70046F3DD /* LaunchScreen.xib */; };
 		3C9CDEC31B267EE70046F3DD /* LjjWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDEC21B267EE70046F3DD /* LjjWeiboTests.m */; };
+		3C9CDECE1B268DBA0046F3DD /* LjjTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDECD1B268DBA0046F3DD /* LjjTabBarViewController.m */; };
+		3C9CDED11B268E270046F3DD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDED01B268E270046F3DD /* HomeViewController.m */; };
+		3C9CDED41B268E810046F3DD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDED31B268E810046F3DD /* MessageViewController.m */; };
+		3C9CDED71B268EA30046F3DD /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDED61B268EA30046F3DD /* DiscoverViewController.m */; };
+		3C9CDEDA1B268EB20046F3DD /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDED91B268EB20046F3DD /* MeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,10 +35,19 @@
 		3C9CDEAA1B267EE70046F3DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C9CDEAB1B267EE70046F3DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C9CDEB31B267EE70046F3DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3C9CDEB61B267EE70046F3DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3C9CDEBC1B267EE70046F3DD /* LjjWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LjjWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9CDEC11B267EE70046F3DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C9CDEC21B267EE70046F3DD /* LjjWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LjjWeiboTests.m; sourceTree = "<group>"; };
+		3C9CDECC1B268DBA0046F3DD /* LjjTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjTabBarViewController.h; sourceTree = "<group>"; };
+		3C9CDECD1B268DBA0046F3DD /* LjjTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBarViewController.m; sourceTree = "<group>"; };
+		3C9CDECF1B268E270046F3DD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3C9CDED01B268E270046F3DD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3C9CDED21B268E810046F3DD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		3C9CDED31B268E810046F3DD /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		3C9CDED51B268EA30046F3DD /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		3C9CDED61B268EA30046F3DD /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		3C9CDED81B268EB20046F3DD /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		3C9CDED91B268EB20046F3DD /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +89,19 @@
 		3C9CDEA51B267EE70046F3DD /* LjjWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				3C9CDECC1B268DBA0046F3DD /* LjjTabBarViewController.h */,
+				3C9CDECD1B268DBA0046F3DD /* LjjTabBarViewController.m */,
+				3C9CDECF1B268E270046F3DD /* HomeViewController.h */,
+				3C9CDED01B268E270046F3DD /* HomeViewController.m */,
+				3C9CDED21B268E810046F3DD /* MessageViewController.h */,
+				3C9CDED31B268E810046F3DD /* MessageViewController.m */,
+				3C9CDED51B268EA30046F3DD /* DiscoverViewController.h */,
+				3C9CDED61B268EA30046F3DD /* DiscoverViewController.m */,
+				3C9CDED81B268EB20046F3DD /* MeViewController.h */,
+				3C9CDED91B268EB20046F3DD /* MeViewController.m */,
 				3C9CDEAA1B267EE70046F3DD /* AppDelegate.h */,
 				3C9CDEAB1B267EE70046F3DD /* AppDelegate.m */,
 				3C9CDEB31B267EE70046F3DD /* Images.xcassets */,
-				3C9CDEB51B267EE70046F3DD /* LaunchScreen.xib */,
 				3C9CDEA61B267EE70046F3DD /* Supporting Files */,
 			);
 			path = LjjWeibo;
@@ -191,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9CDEB71B267EE70046F3DD /* LaunchScreen.xib in Resources */,
 				3C9CDEB41B267EE70046F3DD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,8 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9CDECE1B268DBA0046F3DD /* LjjTabBarViewController.m in Sources */,
+				3C9CDED71B268EA30046F3DD /* DiscoverViewController.m in Sources */,
+				3C9CDEDA1B268EB20046F3DD /* MeViewController.m in Sources */,
+				3C9CDED41B268E810046F3DD /* MessageViewController.m in Sources */,
 				3C9CDEAC1B267EE70046F3DD /* AppDelegate.m in Sources */,
 				3C9CDEA91B267EE70046F3DD /* main.m in Sources */,
+				3C9CDED11B268E270046F3DD /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,17 +258,6 @@
 			targetProxy = 3C9CDEBD1B267EE70046F3DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3C9CDEB51B267EE70046F3DD /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C9CDEB61B267EE70046F3DD /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3C9CDEC41B267EE70046F3DD /* Debug */ = {
@@ -329,9 +344,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LjjWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -339,9 +357,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LjjWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -398,6 +419,7 @@
 				3C9CDEC81B267EE70046F3DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C9CDEC91B267EE70046F3DD /* Build configuration list for PBXNativeTarget "LjjWeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +428,7 @@
 				3C9CDECB1B267EE70046F3DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
