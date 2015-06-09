@@ -42,11 +42,13 @@
 
 // 初始化一个子控制器
 - (void)setUpChildViewController: (UIViewController*)childVc title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName {
+    // 设置子控制器属性
     childVc.view.backgroundColor = [UIColor greenColor];
     childVc.title = title;
     childVc.tabBarItem.image = [UIImage imageNamed:imageName];
     UIImage* meSelectedImage = [UIImage imageNamed:selectedImageName];
     childVc.tabBarItem.selectedImage = [meSelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    // 子控制器包装导航控制器
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
 }
