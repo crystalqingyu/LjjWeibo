@@ -11,6 +11,8 @@
 #import "MessageViewController.h"
 #import "DiscoverViewController.h"
 #import "MeViewController.h"
+#import "UIImage+Ljj.h"
+#import "LjjTabBar.h"
 
 @interface LjjTabBarViewController ()
 
@@ -22,6 +24,8 @@
     [super viewDidLoad];
     // 初始化所有子控制器
     [self setUpAllChildViewControllers];
+    // 初始化tabBar
+    [self setUpTabBar];
 }
 
 // 初始化所有子控制器
@@ -45,13 +49,25 @@
     // 设置子控制器属性
     childVc.view.backgroundColor = [UIColor greenColor];
     childVc.title = title;
-    childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    UIImage* meSelectedImage = [UIImage imageNamed:selectedImageName];
-    childVc.tabBarItem.selectedImage = [meSelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVc.tabBarItem.image = [UIImage imageWithName:imageName];
+    UIImage* selectedImage = [UIImage imageWithName:selectedImageName];
+    if (IOS7) {
+        childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    } else {
+        childVc.tabBarItem.selectedImage = selectedImage;
+    }
     // 子控制器包装导航控制器
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
 }
 
+// 初始化tabBar
+- (void)setUpTabBar {
+    // 初始化LjjTabBar
+    LjjTabBar* customTabBar = [[LjjTabBar alloc] init];
+    customTabBar.backgroundColor = [UIColor blackColor];
+    customTabBar.frame = self.tabBar.bounds;
+    [self.tabBar addSubview:customTabBar];
+}
 
 @end
