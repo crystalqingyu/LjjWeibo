@@ -10,4 +10,6 @@
 
 @interface LjjTabBar : UIView
 
+- (void)addButtonWithTabBarItem: (UITabBarItem*)item;
+
 @end

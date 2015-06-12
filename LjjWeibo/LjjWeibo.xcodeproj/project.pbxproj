@@ -18,6 +18,7 @@
 		3C9CDF4A1B29389A0046F3DD /* UIImage+Ljj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDF491B29389A0046F3DD /* UIImage+Ljj.m */; };
 		3C9CDF541B2942970046F3DD /* LjjTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDF531B2942970046F3DD /* LjjTabBarViewController.m */; };
 		3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDF561B2944B70046F3DD /* LjjTabBar.m */; };
+		3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		3C9CDF531B2942970046F3DD /* LjjTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBarViewController.m; sourceTree = "<group>"; };
 		3C9CDF551B2944B70046F3DD /* LjjTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjTabBar.h; sourceTree = "<group>"; };
 		3C9CDF561B2944B70046F3DD /* LjjTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBar.m; sourceTree = "<group>"; };
+		3CDBEB491B2AEBF700CBEFFE /* LjjTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjTabBarButton.h; sourceTree = "<group>"; };
+		3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +319,8 @@
 			children = (
 				3C9CDF551B2944B70046F3DD /* LjjTabBar.h */,
 				3C9CDF561B2944B70046F3DD /* LjjTabBar.m */,
+				3CDBEB491B2AEBF700CBEFFE /* LjjTabBarButton.h */,
+				3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */,
 				3C9CDF3A1B2928390046F3DD /* MessageViewController.m in Sources */,
 				3C9CDF3B1B2928390046F3DD /* DiscoverViewController.m in Sources */,
 				3C9CDF3D1B2928390046F3DD /* AppDelegate.m in Sources */,

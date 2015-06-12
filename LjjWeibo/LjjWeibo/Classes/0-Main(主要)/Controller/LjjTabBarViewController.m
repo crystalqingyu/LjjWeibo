@@ -16,16 +16,36 @@
 
 @interface LjjTabBarViewController ()
 
+@property (nonatomic, strong) LjjTabBar* customTabBar;
+
 @end
 
 @implementation LjjTabBarViewController
 
+- (LjjTabBar*)customTabBar {
+    if (_customTabBar==nil) {
+        // 初始化LjjTabBar
+        _customTabBar = [[LjjTabBar alloc] initWithFrame:self.tabBar.bounds];
+    }
+    return _customTabBar;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 添加customTabBar
+    [self.tabBar addSubview:self.customTabBar];
     // 初始化所有子控制器
     [self setUpAllChildViewControllers];
-    // 初始化tabBar
-    [self setUpTabBar];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // 删除系统自带的tabBar的Button
+    for (id child in self.tabBar.subviews) {
+        if ([child isKindOfClass:[UIControl class]]) {
+            [child removeFromSuperview];
+        }
+    }
 }
 
 // 初始化所有子控制器
@@ -59,15 +79,8 @@
     // 子控制器包装导航控制器
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
-}
-
-// 初始化tabBar
-- (void)setUpTabBar {
-    // 初始化LjjTabBar
-    LjjTabBar* customTabBar = [[LjjTabBar alloc] init];
-    customTabBar.backgroundColor = [UIColor blackColor];
-    customTabBar.frame = self.tabBar.bounds;
-    [self.tabBar addSubview:customTabBar];
+    // tabBar添加相应button
+    [self.customTabBar addButtonWithTabBarItem:childVc.tabBarItem];
 }
 
 @end
