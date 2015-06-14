@@ -44,6 +44,10 @@
         LjjTabBarButton* button = self.subviews[i];
         CGFloat x = self.frame.size.width / self.subviews.count * i;
         button.frame = CGRectMake(x, y, w, h);
+        // 默认一进来第0个按钮选中
+        if (i == 0) {
+            [self clickButton:button];
+        }
     }
 }
 

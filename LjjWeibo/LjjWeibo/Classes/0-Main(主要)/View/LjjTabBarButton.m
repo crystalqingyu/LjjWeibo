@@ -16,6 +16,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundImage:[UIImage imageWithName:@"tabbar_slider"] forState:UIControlStateSelected];
+        // Button的图片和文字居中显示
+        self.imageView.contentMode = UIViewContentModeCenter;
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.font = [UIFont systemFontOfSize:11];
     }
     return self;
 }
