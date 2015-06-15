@@ -12,4 +12,6 @@
 
 +(UIImage*)imageWithName: (NSString*)imageName;
 
++(UIImage*)stretchableImageWithName:(NSString *)imageName;
+
 @end

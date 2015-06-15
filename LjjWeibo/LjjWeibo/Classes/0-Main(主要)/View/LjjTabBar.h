@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class LjjTabBar;
+@protocol LjjTabBarDelegate <NSObject>
+- (void)tabBar: (LjjTabBar*)tabBar didSelectedButtonFrom: (int)from to: (int)to;
+@end
+
 @interface LjjTabBar : UIView
+
+@property (nonatomic, weak) id<LjjTabBarDelegate>delegate;
 
 - (void)addButtonWithTabBarItem: (UITabBarItem*)item;
 

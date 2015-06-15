@@ -20,7 +20,10 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageWithName:@"tabbar_background"]];
+        // 设置背景
+        if (!IOS7) {
+            self.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageWithName:@"tabbar_background"]];
+        }
     }
     return self;
 }
@@ -44,6 +47,8 @@
         LjjTabBarButton* button = self.subviews[i];
         CGFloat x = self.frame.size.width / self.subviews.count * i;
         button.frame = CGRectMake(x, y, w, h);
+        // 绑定tag
+        button.tag = i;
         // 默认一进来第0个按钮选中
         if (i == 0) {
             [self clickButton:button];
@@ -52,6 +57,11 @@
 }
 
 - (void)clickButton: (LjjTabBarButton*)button {
+    // 通知代理切换控制器
+    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)]) {
+        [self.delegate tabBar:self didSelectedButtonFrom:self.selectedButton.tag to:button.tag];
+    }
+    // 切换内部按钮
     self.selectedButton.selected = NO;
     button.selected = YES;
     self.selectedButton = button;

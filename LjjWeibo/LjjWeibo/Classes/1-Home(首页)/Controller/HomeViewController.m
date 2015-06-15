@@ -16,12 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 测试按钮
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [button addTarget:self action:@selector(clickButton) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(100, 200, 20, 20);
+    [self.view addSubview:button];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)clickButton {
+    self.tabBarItem.title = @"2";
 }
 
 - (void)didReceiveMemoryWarning {
