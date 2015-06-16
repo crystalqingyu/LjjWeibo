@@ -19,6 +19,7 @@
 		3C9CDF541B2942970046F3DD /* LjjTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDF531B2942970046F3DD /* LjjTabBarViewController.m */; };
 		3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDF561B2944B70046F3DD /* LjjTabBar.m */; };
 		3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */; };
+		3CDBEB4E1B2FC14D00CBEFFE /* LjjBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		3C9CDF561B2944B70046F3DD /* LjjTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBar.m; sourceTree = "<group>"; };
 		3CDBEB491B2AEBF700CBEFFE /* LjjTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjTabBarButton.h; sourceTree = "<group>"; };
 		3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBarButton.m; sourceTree = "<group>"; };
+		3CDBEB4C1B2FC14D00CBEFFE /* LjjBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjBadgeButton.h; sourceTree = "<group>"; };
+		3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjBadgeButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +324,8 @@
 				3C9CDF561B2944B70046F3DD /* LjjTabBar.m */,
 				3CDBEB491B2AEBF700CBEFFE /* LjjTabBarButton.h */,
 				3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */,
+				3CDBEB4C1B2FC14D00CBEFFE /* LjjBadgeButton.h */,
+				3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				3C9CDF541B2942970046F3DD /* LjjTabBarViewController.m in Sources */,
 				3C9CDF4A1B29389A0046F3DD /* UIImage+Ljj.m in Sources */,
 				3C9CDF391B2928390046F3DD /* HomeViewController.m in Sources */,
+				3CDBEB4E1B2FC14D00CBEFFE /* LjjBadgeButton.m in Sources */,
 				3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */,
 				3C9CDF3E1B2928390046F3DD /* main.m in Sources */,
 				3C9CDF3C1B2928390046F3DD /* MeViewController.m in Sources */,

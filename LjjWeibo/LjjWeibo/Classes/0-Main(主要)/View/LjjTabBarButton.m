@@ -7,6 +7,7 @@
 //
 
 #import "LjjTabBarButton.h"
+#import "LjjBadgeButton.h"
 
 #define LjjTabBarButtonImageRatio 0.6
 #define LjjTabBarButtonTitleColorNormal (IOS7 ? [UIColor colorWithRed:138.0/255 green:139.0/255 blue:138.0/255 alpha:1] : [UIColor whiteColor])
@@ -14,7 +15,8 @@
 
 @interface LjjTabBarButton ()
 
-@property (nonatomic, strong) UIButton* badgeButton;
+// 提醒数字
+@property (nonatomic, strong) LjjBadgeButton* badgeButton;
 
 @end
 
@@ -33,12 +35,9 @@
         // 文字颜色设置
         [self setTitleColor:LjjTabBarButtonTitleColorNormal forState:UIControlStateNormal];
         [self setTitleColor:LjjTabBarButtonTitleColorSelected forState:UIControlStateSelected];
-        // UIBadgeButton设置
-        UIButton* badgeButton = [[UIButton alloc] init];
-        [badgeButton setBackgroundImage:[UIImage stretchableImageWithName:@"main_badge"] forState:UIControlStateNormal];
-        badgeButton.titleLabel.font = [UIFont systemFontOfSize:10];
+        // 提醒数字按钮设置
+        LjjBadgeButton* badgeButton = [[LjjBadgeButton alloc] init];
         badgeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
-        badgeButton.hidden = YES;
         _badgeButton = badgeButton;
         [self addSubview:badgeButton];
     }
@@ -73,33 +72,33 @@
     [item addObserver:self forKeyPath:@"selectedImage" options:0 context:nil];
 }
 
-- (void)setHighlighted:(BOOL)highlighted {
-    highlighted = NO;
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     // 设置文字
     [self setTitle:self.item.title forState:UIControlStateNormal];
     // 设置图片
     [self setImage:self.item.image forState:UIControlStateNormal];
     [self setImage:self.item.selectedImage forState:UIControlStateSelected];
-    // 设置提醒数字
-    if (self.item.badgeValue!=nil) {
-        self.badgeButton.hidden = NO;
-        CGFloat y = 2;
-        CGFloat w = self.badgeButton.currentBackgroundImage.size.width;
-        // 字数过长增加宽度
-        if (self.item.badgeValue.length > 2) {
-            CGSize size = [self.item.badgeValue sizeWithFont:self.badgeButton.titleLabel.font];
-            w = size.width;
-        }
-        CGFloat h = self.badgeButton.currentBackgroundImage.size.height;
-        CGFloat x = self.frame.size.width - w;
-        self.badgeButton.frame = CGRectMake(x,y,w,h);
-        [self.badgeButton setTitle:self.item.badgeValue forState:UIControlStateNormal];
-    } else {
-        self.badgeButton.hidden = YES;
-    }
+    // 设置提醒数字按钮
+    self.badgeButton.badgeValue = self.item.badgeValue;
+    // 设置提醒数字按钮位置
+    CGFloat y = 2;
+    CGFloat x = self.frame.size.width - self.badgeButton.frame.size.width;
+    CGRect frame = self.badgeButton.frame;
+    frame.origin.x = x;
+    frame.origin.y = y;
+    self.badgeButton.frame = frame;
+}
+
+- (void)dealloc {
+    // 释放按钮对item属性的监听
+    [self.item removeObserver:self forKeyPath:@"badgeValue" context:nil];
+    [self.item removeObserver:self forKeyPath:@"title" context:nil];
+    [self.item removeObserver:self forKeyPath:@"image" context:nil];
+    [self.item removeObserver:self forKeyPath:@"selectedImage" context:nil];
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+    highlighted = NO;
 }
 
 @end
