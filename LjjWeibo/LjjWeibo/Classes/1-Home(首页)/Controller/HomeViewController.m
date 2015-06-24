@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "UIBarButtonItem+Ljj.h"
 
 @interface HomeViewController ()
 
@@ -16,8 +17,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    // 添加左边按钮
+//    self.navigationItem.leftBarButtonItem = [self barButtonItemInitWithImageName:@"navigationbar_friendsearch" action:@selector(clickFriendSearch)];
+//    // 添加右边按钮
+//    self.navigationItem.rightBarButtonItem = [self barButtonItemInitWithImageName:@"navigationbar_pop" action:@selector(clickPop)];
+    
+    // 添加左边按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem  itemWithImageName:@"navigationbar_friendsearch" highlightedImageName:@"navigationbar_friendsearch_highlighted" action:@selector(clickFriendSearch) target: self];
+    // 添加右边按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem  itemWithImageName:@"navigationbar_pop" highlightedImageName:@"navigationbar_pop_highlighted" action:@selector(clickPop) target:self];
 }
 
+// 快速创建一个显示图片的barButtonItem
+- (UIBarButtonItem*)barButtonItemInitWithImageName: (NSString*)imageName action: (SEL)action {
+    // 创建按钮并设置属性
+    UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setBackgroundImage:[UIImage imageWithName:imageName] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageWithName:[imageName stringByAppendingString:@"_highlighted"]] forState:UIControlStateHighlighted];
+    CGSize btnSize = [btn currentBackgroundImage].size;
+    btn.bounds = CGRectMake(0, 0, btnSize.width, btnSize.height);
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    // 将按钮添加进item中并返回
+    UIBarButtonItem* item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
+- (void)clickFriendSearch {
+    NSLog(@"点击了搜索朋友按钮");
+}
+
+- (void)clickPop {
+   NSLog(@"点击了Pop按钮");
+}
 
 #pragma mark - Table view data source
 

@@ -21,6 +21,8 @@
 		3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */; };
 		3CDBEB4E1B2FC14D00CBEFFE /* LjjBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */; };
 		3CDBEB541B31356F00CBEFFE /* LjjNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB531B31356F00CBEFFE /* LjjNavigationController.m */; };
+		3CE73D271B3A662F0039A908 /* UIBarButtonItem+Ljj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73D261B3A662F0039A908 /* UIBarButtonItem+Ljj.m */; };
+		3CE73D2A1B3ABCC00039A908 /* LjjSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73D291B3ABCC00039A908 /* LjjSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjBadgeButton.m; sourceTree = "<group>"; };
 		3CDBEB521B31356F00CBEFFE /* LjjNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjNavigationController.h; sourceTree = "<group>"; };
 		3CDBEB531B31356F00CBEFFE /* LjjNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjNavigationController.m; sourceTree = "<group>"; };
+		3CE73D251B3A662F0039A908 /* UIBarButtonItem+Ljj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Ljj.h"; sourceTree = "<group>"; };
+		3CE73D261B3A662F0039A908 /* UIBarButtonItem+Ljj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Ljj.m"; sourceTree = "<group>"; };
+		3CE73D281B3ABCC00039A908 /* LjjSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjSearchBar.h; sourceTree = "<group>"; };
+		3CE73D291B3ABCC00039A908 /* LjjSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,8 @@
 		3C9CDF2D1B2928390046F3DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CE73D281B3ABCC00039A908 /* LjjSearchBar.h */,
+				3CE73D291B3ABCC00039A908 /* LjjSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +317,8 @@
 			children = (
 				3C9CDF481B29389A0046F3DD /* UIImage+Ljj.h */,
 				3C9CDF491B29389A0046F3DD /* UIImage+Ljj.m */,
+				3CE73D251B3A662F0039A908 /* UIBarButtonItem+Ljj.h */,
+				3CE73D261B3A662F0039A908 /* UIBarButtonItem+Ljj.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -442,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE73D271B3A662F0039A908 /* UIBarButtonItem+Ljj.m in Sources */,
 				3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */,
 				3C9CDF3A1B2928390046F3DD /* MessageViewController.m in Sources */,
 				3C9CDF3B1B2928390046F3DD /* DiscoverViewController.m in Sources */,
@@ -453,6 +464,7 @@
 				3CDBEB4E1B2FC14D00CBEFFE /* LjjBadgeButton.m in Sources */,
 				3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */,
 				3C9CDF3E1B2928390046F3DD /* main.m in Sources */,
+				3CE73D2A1B3ABCC00039A908 /* LjjSearchBar.m in Sources */,
 				3C9CDF3C1B2928390046F3DD /* MeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

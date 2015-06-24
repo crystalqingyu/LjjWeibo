@@ -41,15 +41,17 @@
 + (void)setBarButtonItemTheme {
     // 取出appearence对象
     UIBarButtonItem* item = [UIBarButtonItem appearance];
-    // 设置背景
-    [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
-    [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_pushed"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    if (!IOS7) {
+        // 设置背景
+        [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_disable"] forState:UIControlStateDisabled barMetrics:UIBarMetricsDefault];
+        [item setBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background_pushed"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    }
     // 设置标题属性
     NSMutableDictionary* attrDict = [NSMutableDictionary dictionary];
     [item setTitleTextAttributes:attrDict forState:UIControlStateNormal];
     [item setTitleTextAttributes:attrDict forState:UIControlStateHighlighted];
-    attrDict[UITextAttributeTextColor] = [UIColor grayColor];
+    attrDict[UITextAttributeTextColor] = !IOS7? [UIColor grayColor] : [UIColor orangeColor];
     attrDict[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
     attrDict[UITextAttributeFont] = [UIFont systemFontOfSize:14];
 }
