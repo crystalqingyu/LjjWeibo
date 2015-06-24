@@ -13,6 +13,7 @@
 #import "MeViewController.h"
 #import "UIImage+Ljj.h"
 #import "LjjTabBar.h"
+#import "LjjNavigationController.h"
 
 @interface LjjTabBarViewController () <LjjTabBarDelegate>
 
@@ -70,7 +71,6 @@
 // 初始化一个子控制器
 - (void)setUpChildViewController: (UIViewController*)childVc title:(NSString*)title imageName:(NSString*)imageName selectedImageName:(NSString*)selectedImageName {
     // 设置子控制器属性
-    childVc.view.backgroundColor = [UIColor greenColor];
     childVc.title = title;
     childVc.tabBarItem.image = [UIImage imageWithName:imageName];
     UIImage* selectedImage = [UIImage imageWithName:selectedImageName];
@@ -80,7 +80,7 @@
         childVc.tabBarItem.selectedImage = selectedImage;
     }
     // 子控制器包装导航控制器
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:childVc];
+    LjjNavigationController* nav = [[LjjNavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
     // tabBar添加相应button
     [self.customTabBar addButtonWithTabBarItem:childVc.tabBarItem];

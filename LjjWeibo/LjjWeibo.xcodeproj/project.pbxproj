@@ -20,6 +20,7 @@
 		3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDF561B2944B70046F3DD /* LjjTabBar.m */; };
 		3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */; };
 		3CDBEB4E1B2FC14D00CBEFFE /* LjjBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */; };
+		3CDBEB541B31356F00CBEFFE /* LjjNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB531B31356F00CBEFFE /* LjjNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		3CDBEB4A1B2AEBF700CBEFFE /* LjjTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTabBarButton.m; sourceTree = "<group>"; };
 		3CDBEB4C1B2FC14D00CBEFFE /* LjjBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjBadgeButton.h; sourceTree = "<group>"; };
 		3CDBEB4D1B2FC14D00CBEFFE /* LjjBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjBadgeButton.m; sourceTree = "<group>"; };
+		3CDBEB521B31356F00CBEFFE /* LjjNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjNavigationController.h; sourceTree = "<group>"; };
+		3CDBEB531B31356F00CBEFFE /* LjjNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +338,8 @@
 			children = (
 				3C9CDF521B2942970046F3DD /* LjjTabBarViewController.h */,
 				3C9CDF531B2942970046F3DD /* LjjTabBarViewController.m */,
+				3CDBEB521B31356F00CBEFFE /* LjjNavigationController.h */,
+				3CDBEB531B31356F00CBEFFE /* LjjNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				3C9CDF3A1B2928390046F3DD /* MessageViewController.m in Sources */,
 				3C9CDF3B1B2928390046F3DD /* DiscoverViewController.m in Sources */,
 				3C9CDF3D1B2928390046F3DD /* AppDelegate.m in Sources */,
+				3CDBEB541B31356F00CBEFFE /* LjjNavigationController.m in Sources */,
 				3C9CDF541B2942970046F3DD /* LjjTabBarViewController.m in Sources */,
 				3C9CDF4A1B29389A0046F3DD /* UIImage+Ljj.m in Sources */,
 				3C9CDF391B2928390046F3DD /* HomeViewController.m in Sources */,
