@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "UIBarButtonItem+Ljj.h"
+#import "LjjTitleButton.h"
 
 @interface HomeViewController ()
 
@@ -17,15 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    // 添加左边按钮
-//    self.navigationItem.leftBarButtonItem = [self barButtonItemInitWithImageName:@"navigationbar_friendsearch" action:@selector(clickFriendSearch)];
-//    // 添加右边按钮
-//    self.navigationItem.rightBarButtonItem = [self barButtonItemInitWithImageName:@"navigationbar_pop" action:@selector(clickPop)];
-    
     // 添加左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem  itemWithImageName:@"navigationbar_friendsearch" highlightedImageName:@"navigationbar_friendsearch_highlighted" action:@selector(clickFriendSearch) target: self];
+    
     // 添加右边按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem  itemWithImageName:@"navigationbar_pop" highlightedImageName:@"navigationbar_pop_highlighted" action:@selector(clickPop) target:self];
+    
+    // 添加中间按钮
+    LjjTitleButton* btn = [[LjjTitleButton alloc] init];
+    self.navigationItem.titleView = btn;
+    btn.frame = CGRectMake(0, 0, 130, 40);
+    [btn setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    [btn setTitle:@"Julie_Jing" forState:UIControlStateNormal];
 }
 
 // 快速创建一个显示图片的barButtonItem
@@ -61,9 +65,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    static NSString* cellID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     cell.textLabel.text = @"hahah";
     

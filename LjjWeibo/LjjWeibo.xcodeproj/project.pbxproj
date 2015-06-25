@@ -23,6 +23,7 @@
 		3CDBEB541B31356F00CBEFFE /* LjjNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDBEB531B31356F00CBEFFE /* LjjNavigationController.m */; };
 		3CE73D271B3A662F0039A908 /* UIBarButtonItem+Ljj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73D261B3A662F0039A908 /* UIBarButtonItem+Ljj.m */; };
 		3CE73D2A1B3ABCC00039A908 /* LjjSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73D291B3ABCC00039A908 /* LjjSearchBar.m */; };
+		3CE73D2D1B3BABD90039A908 /* LjjTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE73D2C1B3BABD90039A908 /* LjjTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		3CE73D261B3A662F0039A908 /* UIBarButtonItem+Ljj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Ljj.m"; sourceTree = "<group>"; };
 		3CE73D281B3ABCC00039A908 /* LjjSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjSearchBar.h; sourceTree = "<group>"; };
 		3CE73D291B3ABCC00039A908 /* LjjSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjSearchBar.m; sourceTree = "<group>"; };
+		3CE73D2B1B3BABD90039A908 /* LjjTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjTitleButton.h; sourceTree = "<group>"; };
+		3CE73D2C1B3BABD90039A908 /* LjjTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjTitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,8 @@
 		3C9CDF211B2928390046F3DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CE73D2B1B3BABD90039A908 /* LjjTitleButton.h */,
+				3CE73D2C1B3BABD90039A908 /* LjjTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				3C9CDF541B2942970046F3DD /* LjjTabBarViewController.m in Sources */,
 				3C9CDF4A1B29389A0046F3DD /* UIImage+Ljj.m in Sources */,
 				3C9CDF391B2928390046F3DD /* HomeViewController.m in Sources */,
+				3CE73D2D1B3BABD90039A908 /* LjjTitleButton.m in Sources */,
 				3CDBEB4E1B2FC14D00CBEFFE /* LjjBadgeButton.m in Sources */,
 				3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */,
 				3C9CDF3E1B2928390046F3DD /* main.m in Sources */,

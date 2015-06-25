@@ -29,12 +29,10 @@
         self.leftViewMode = UITextFieldViewModeAlways;
         // 字体
         self.font = [UIFont systemFontOfSize:14];
-        // placeholder
-        NSMutableDictionary* attrDict = [NSMutableDictionary dictionary];
-        attrDict[NSForegroundColorAttributeName] = [UIColor grayColor];
-        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"搜索" attributes:attrDict];
         // 右边的小叉叉
         self.clearButtonMode = UITextFieldViewModeWhileEditing;
+        // 右下角键盘属性
+        self.returnKeyType = UIReturnKeySearch;
     }
     return self;
 }
@@ -42,7 +40,11 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     // 左边放大镜frame
-    self.leftView.frame = CGRectMake(0, 0, self.leftView.frame.size.width + 10, self.frame.size.height);
+    self.leftView.bounds = CGRectMake(0, 0,30, self.frame.size.height);
+    // placeholder
+    NSMutableDictionary* attrDict = [NSMutableDictionary dictionary];
+    attrDict[NSForegroundColorAttributeName] = [UIColor grayColor];
+    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"搜索" attributes:attrDict];
 }
 
 @end
