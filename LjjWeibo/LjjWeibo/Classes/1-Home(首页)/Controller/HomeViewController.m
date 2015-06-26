@@ -10,6 +10,9 @@
 #import "UIBarButtonItem+Ljj.h"
 #import "LjjTitleButton.h"
 
+#define kTitleButtonUpTag -1
+#define kTitleButtonDownTag 0
+
 @interface HomeViewController ()
 
 @end
@@ -26,10 +29,13 @@
     
     // 添加中间按钮
     LjjTitleButton* btn = [[LjjTitleButton alloc] init];
-    self.navigationItem.titleView = btn;
     btn.frame = CGRectMake(0, 0, 130, 40);
     [btn setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [btn setTitle:@"Julie_Jing" forState:UIControlStateNormal];
+    btn.tag = kTitleButtonDownTag;
+    self.navigationItem.titleView = btn;
+    // 监听按钮
+    [btn addTarget:self action:@selector(clickTitle:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 // 快速创建一个显示图片的barButtonItem
@@ -52,6 +58,11 @@
 
 - (void)clickPop {
    NSLog(@"点击了Pop按钮");
+}
+
+- (void)clickTitle: (LjjTitleButton*)titleBtn {
+    [titleBtn setImage:titleBtn.tag==kTitleButtonDownTag? [UIImage imageWithName:@"navigationbar_arrow_up"] : [UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    titleBtn.tag = titleBtn.tag==kTitleButtonDownTag? kTitleButtonUpTag : kTitleButtonDownTag;
 }
 
 #pragma mark - Table view data source

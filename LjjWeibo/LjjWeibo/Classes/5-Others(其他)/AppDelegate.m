@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LjjTabBarViewController.h"
+#import "NewFeatureViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,9 @@
     application.statusBarHidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[LjjTabBarViewController alloc] init];
+    //self.window.rootViewController = [[LjjTabBarViewController alloc] init];
+    // 测试使用！！
+    self.window.rootViewController = [[NewFeatureViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }
