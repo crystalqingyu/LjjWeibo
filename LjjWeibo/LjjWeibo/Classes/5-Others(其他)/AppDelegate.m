@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LjjTabBarViewController.h"
 #import "NewFeatureViewController.h"
+#import "OAuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,18 +23,20 @@
     application.statusBarHidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    // 判断是不是第一次使用
-    // 取出当前版本号
-    NSString* version = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-    // 取出上一次登录版本号
-    NSString* lastVersion = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastVersion"];
-    if ([version isEqualToString:lastVersion]) {
-        self.window.rootViewController = [[LjjTabBarViewController alloc] init];;
-    } else {
-        self.window.rootViewController = [[NewFeatureViewController alloc] init];
-        // 存储版本号到userDefaults
-        [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"lastVersion"];
-    }
+#warning    // 测试使用
+    self.window.rootViewController = [[OAuthViewController alloc] init];
+//    // 判断是不是第一次使用
+//    // 取出当前版本号
+//    NSString* version = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+//    // 取出上一次登录版本号
+//    NSString* lastVersion = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastVersion"];
+//    if ([version isEqualToString:lastVersion]) {
+//        self.window.rootViewController = [[LjjTabBarViewController alloc] init];;
+//    } else {
+//        self.window.rootViewController = [[NewFeatureViewController alloc] init];
+//        // 存储版本号到userDefaults
+//        [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"lastVersion"];
+//    }
     [self.window makeKeyAndVisible];
     return YES;
 }
