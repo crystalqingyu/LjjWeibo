@@ -17,6 +17,7 @@
 		3C0B43021B46888000B4BA67 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42F71B46888000B4BA67 /* AFURLRequestSerialization.m */; };
 		3C0B43031B46888000B4BA67 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42F91B46888000B4BA67 /* AFURLResponseSerialization.m */; };
 		3C0B43041B46888000B4BA67 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42FB1B46888000B4BA67 /* AFURLSessionManager.m */; };
+		3C1C5D3D1B6EF799001FBC7E /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D3C1B6EF799001FBC7E /* Account.m */; };
 		3C861F6D1B40F742006E15F9 /* LjjPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C861F6C1B40F742006E15F9 /* LjjPageControl.m */; };
 		3C9CDEB41B267EE70046F3DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C9CDEB31B267EE70046F3DD /* Images.xcassets */; };
 		3C9CDEC31B267EE70046F3DD /* LjjWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDEC21B267EE70046F3DD /* LjjWeiboTests.m */; };
@@ -70,6 +71,8 @@
 		3C0B42F91B46888000B4BA67 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		3C0B42FA1B46888000B4BA67 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		3C0B42FB1B46888000B4BA67 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		3C1C5D3B1B6EF799001FBC7E /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		3C1C5D3C1B6EF799001FBC7E /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		3C861F6B1B40F742006E15F9 /* LjjPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjPageControl.h; sourceTree = "<group>"; };
 		3C861F6C1B40F742006E15F9 /* LjjPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjPageControl.m; sourceTree = "<group>"; };
 		3C9CDEA31B267EE70046F3DD /* LjjWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LjjWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +136,7 @@
 		3C0B42E21B467E4400B4BA67 /* 7-OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
+				3C1C5D3A1B6EF743001FBC7E /* Model */,
 				3C0B42E31B467E4400B4BA67 /* Controller */,
 			);
 			name = "7-OAuth(授权)";
@@ -180,6 +184,15 @@
 				3C0B42FB1B46888000B4BA67 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		3C1C5D3A1B6EF743001FBC7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C1C5D3B1B6EF799001FBC7E /* Account.h */,
+				3C1C5D3C1B6EF799001FBC7E /* Account.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3C9CDE9A1B267EE70046F3DD = {
@@ -609,6 +622,7 @@
 				3C9CDF3E1B2928390046F3DD /* main.m in Sources */,
 				3CE73D2A1B3ABCC00039A908 /* LjjSearchBar.m in Sources */,
 				3C9CDF3C1B2928390046F3DD /* MeViewController.m in Sources */,
+				3C1C5D3D1B6EF799001FBC7E /* Account.m in Sources */,
 				3C0B42FF1B46888000B4BA67 /* AFNetworkReachabilityManager.m in Sources */,
 				3C861F6D1B40F742006E15F9 /* LjjPageControl.m in Sources */,
 			);
