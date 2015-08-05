@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0B42E61B467EA200B4BA67 /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42E51B467EA200B4BA67 /* OAuthViewController.m */; };
 		3C0B42FC1B46888000B4BA67 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42EA1B46888000B4BA67 /* AFHTTPRequestOperation.m */; };
 		3C0B42FD1B46888000B4BA67 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42EC1B46888000B4BA67 /* AFHTTPRequestOperationManager.m */; };
 		3C0B42FE1B46888000B4BA67 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42EE1B46888000B4BA67 /* AFHTTPSessionManager.m */; };
@@ -17,7 +16,13 @@
 		3C0B43021B46888000B4BA67 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42F71B46888000B4BA67 /* AFURLRequestSerialization.m */; };
 		3C0B43031B46888000B4BA67 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42F91B46888000B4BA67 /* AFURLResponseSerialization.m */; };
 		3C0B43041B46888000B4BA67 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B42FB1B46888000B4BA67 /* AFURLSessionManager.m */; };
-		3C1C5D3D1B6EF799001FBC7E /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D3C1B6EF799001FBC7E /* Account.m */; };
+		3C1C5D401B705920001FBC7E /* WeiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D3F1B705920001FBC7E /* WeiboTool.m */; };
+		3C1C5D591B709A76001FBC7E /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D541B709A76001FBC7E /* OAuthViewController.m */; };
+		3C1C5D5A1B709A76001FBC7E /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D571B709A76001FBC7E /* Account.m */; };
+		3C1C5D5D1B709BC2001FBC7E /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D5C1B709BC2001FBC7E /* AccountTool.m */; };
+		3C1C5D641B719F3E001FBC7E /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D601B719F3E001FBC7E /* MBProgressHUD+MJ.m */; };
+		3C1C5D651B719F3E001FBC7E /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C1C5D611B719F3E001FBC7E /* MBProgressHUD.bundle */; };
+		3C1C5D661B719F3E001FBC7E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C5D631B719F3E001FBC7E /* MBProgressHUD.m */; };
 		3C861F6D1B40F742006E15F9 /* LjjPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C861F6C1B40F742006E15F9 /* LjjPageControl.m */; };
 		3C9CDEB41B267EE70046F3DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C9CDEB31B267EE70046F3DD /* Images.xcassets */; };
 		3C9CDEC31B267EE70046F3DD /* LjjWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9CDEC21B267EE70046F3DD /* LjjWeiboTests.m */; };
@@ -50,8 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C0B42E41B467EA200B4BA67 /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
-		3C0B42E51B467EA200B4BA67 /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
 		3C0B42E91B46888000B4BA67 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		3C0B42EA1B46888000B4BA67 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		3C0B42EB1B46888000B4BA67 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -71,8 +74,19 @@
 		3C0B42F91B46888000B4BA67 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		3C0B42FA1B46888000B4BA67 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		3C0B42FB1B46888000B4BA67 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		3C1C5D3B1B6EF799001FBC7E /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		3C1C5D3C1B6EF799001FBC7E /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		3C1C5D3E1B705920001FBC7E /* WeiboTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboTool.h; sourceTree = "<group>"; };
+		3C1C5D3F1B705920001FBC7E /* WeiboTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboTool.m; sourceTree = "<group>"; };
+		3C1C5D531B709A76001FBC7E /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
+		3C1C5D541B709A76001FBC7E /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
+		3C1C5D561B709A76001FBC7E /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		3C1C5D571B709A76001FBC7E /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		3C1C5D5B1B709BC2001FBC7E /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
+		3C1C5D5C1B709BC2001FBC7E /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
+		3C1C5D5F1B719F3E001FBC7E /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		3C1C5D601B719F3E001FBC7E /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		3C1C5D611B719F3E001FBC7E /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		3C1C5D621B719F3E001FBC7E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		3C1C5D631B719F3E001FBC7E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		3C861F6B1B40F742006E15F9 /* LjjPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LjjPageControl.h; sourceTree = "<group>"; };
 		3C861F6C1B40F742006E15F9 /* LjjPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LjjPageControl.m; sourceTree = "<group>"; };
 		3C9CDEA31B267EE70046F3DD /* LjjWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LjjWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,28 +147,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C0B42E21B467E4400B4BA67 /* 7-OAuth(授权) */ = {
-			isa = PBXGroup;
-			children = (
-				3C1C5D3A1B6EF743001FBC7E /* Model */,
-				3C0B42E31B467E4400B4BA67 /* Controller */,
-			);
-			name = "7-OAuth(授权)";
-			path = "6-NewFeature(版本新特性)/7-OAuth(授权)";
-			sourceTree = "<group>";
-		};
-		3C0B42E31B467E4400B4BA67 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				3C0B42E41B467EA200B4BA67 /* OAuthViewController.h */,
-				3C0B42E51B467EA200B4BA67 /* OAuthViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		3C0B42E71B46888000B4BA67 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3C1C5D5E1B719F3E001FBC7E /* MBProgressHUD */,
 				3C0B42E81B46888000B4BA67 /* AFNetworking */,
 			);
 			path = Lib;
@@ -186,13 +182,53 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		3C1C5D3A1B6EF743001FBC7E /* Model */ = {
+		3C1C5D511B709A76001FBC7E /* 7-OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
-				3C1C5D3B1B6EF799001FBC7E /* Account.h */,
-				3C1C5D3C1B6EF799001FBC7E /* Account.m */,
+				3C1C5D521B709A76001FBC7E /* Controller */,
+				3C1C5D551B709A76001FBC7E /* Model */,
+				3C1C5D581B709A76001FBC7E /* Tool */,
+			);
+			path = "7-OAuth(授权)";
+			sourceTree = "<group>";
+		};
+		3C1C5D521B709A76001FBC7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C1C5D531B709A76001FBC7E /* OAuthViewController.h */,
+				3C1C5D541B709A76001FBC7E /* OAuthViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3C1C5D551B709A76001FBC7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C1C5D561B709A76001FBC7E /* Account.h */,
+				3C1C5D571B709A76001FBC7E /* Account.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3C1C5D581B709A76001FBC7E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3C1C5D5B1B709BC2001FBC7E /* AccountTool.h */,
+				3C1C5D5C1B709BC2001FBC7E /* AccountTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		3C1C5D5E1B719F3E001FBC7E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3C1C5D5F1B719F3E001FBC7E /* MBProgressHUD+MJ.h */,
+				3C1C5D601B719F3E001FBC7E /* MBProgressHUD+MJ.m */,
+				3C1C5D611B719F3E001FBC7E /* MBProgressHUD.bundle */,
+				3C1C5D621B719F3E001FBC7E /* MBProgressHUD.h */,
+				3C1C5D631B719F3E001FBC7E /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		3C9CDE9A1B267EE70046F3DD = {
@@ -251,6 +287,7 @@
 		3C9CDF181B2928390046F3DD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3C1C5D511B709A76001FBC7E /* 7-OAuth(授权) */,
 				3C9CDF191B2928390046F3DD /* 0-Main(主要) */,
 				3C9CDF1C1B2928390046F3DD /* 1-Home(首页) */,
 				3C9CDF221B2928390046F3DD /* 2-Message(消息) */,
@@ -258,7 +295,6 @@
 				3C9CDF2E1B2928390046F3DD /* 4-Me(我) */,
 				3C9CDF341B2928390046F3DD /* 5-Others(其他) */,
 				3CE73D311B3D039D0039A908 /* 6-NewFeature(版本新特性) */,
-				3C0B42E21B467E4400B4BA67 /* 7-OAuth(授权) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -418,6 +454,8 @@
 				3C9CDF361B2928390046F3DD /* AppDelegate.m */,
 				3C9CDF371B2928390046F3DD /* main.m */,
 				3C9CDF401B29296C0046F3DD /* PrefixHeader.pch */,
+				3C1C5D3E1B705920001FBC7E /* WeiboTool.h */,
+				3C1C5D3F1B705920001FBC7E /* WeiboTool.m */,
 			);
 			path = "5-Others(其他)";
 			sourceTree = "<group>";
@@ -580,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9CDEB41B267EE70046F3DD /* Images.xcassets in Resources */,
+				3C1C5D651B719F3E001FBC7E /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,9 +636,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C1C5D591B709A76001FBC7E /* OAuthViewController.m in Sources */,
+				3C1C5D641B719F3E001FBC7E /* MBProgressHUD+MJ.m in Sources */,
 				3CE73D271B3A662F0039A908 /* UIBarButtonItem+Ljj.m in Sources */,
 				3CDBEB4B1B2AEBF700CBEFFE /* LjjTabBarButton.m in Sources */,
+				3C1C5D401B705920001FBC7E /* WeiboTool.m in Sources */,
 				3C0B43001B46888000B4BA67 /* AFSecurityPolicy.m in Sources */,
+				3C1C5D5D1B709BC2001FBC7E /* AccountTool.m in Sources */,
 				3C0B42FD1B46888000B4BA67 /* AFHTTPRequestOperationManager.m in Sources */,
 				3C0B42FC1B46888000B4BA67 /* AFHTTPRequestOperation.m in Sources */,
 				3C9CDF3A1B2928390046F3DD /* MessageViewController.m in Sources */,
@@ -608,6 +651,7 @@
 				3CDBEB541B31356F00CBEFFE /* LjjNavigationController.m in Sources */,
 				3C9CDF541B2942970046F3DD /* LjjTabBarViewController.m in Sources */,
 				3C9CDF4A1B29389A0046F3DD /* UIImage+Ljj.m in Sources */,
+				3C1C5D661B719F3E001FBC7E /* MBProgressHUD.m in Sources */,
 				3C9CDF391B2928390046F3DD /* HomeViewController.m in Sources */,
 				3CE73D2D1B3BABD90039A908 /* LjjTitleButton.m in Sources */,
 				3C0B42FE1B46888000B4BA67 /* AFHTTPSessionManager.m in Sources */,
@@ -617,12 +661,11 @@
 				3C0B43021B46888000B4BA67 /* AFURLRequestSerialization.m in Sources */,
 				3C0B43041B46888000B4BA67 /* AFURLSessionManager.m in Sources */,
 				3C0B43031B46888000B4BA67 /* AFURLResponseSerialization.m in Sources */,
-				3C0B42E61B467EA200B4BA67 /* OAuthViewController.m in Sources */,
+				3C1C5D5A1B709A76001FBC7E /* Account.m in Sources */,
 				3C9CDF571B2944B70046F3DD /* LjjTabBar.m in Sources */,
 				3C9CDF3E1B2928390046F3DD /* main.m in Sources */,
 				3CE73D2A1B3ABCC00039A908 /* LjjSearchBar.m in Sources */,
 				3C9CDF3C1B2928390046F3DD /* MeViewController.m in Sources */,
-				3C1C5D3D1B6EF799001FBC7E /* Account.m in Sources */,
 				3C0B42FF1B46888000B4BA67 /* AFNetworkReachabilityManager.m in Sources */,
 				3C861F6D1B40F742006E15F9 /* LjjPageControl.m in Sources */,
 			);

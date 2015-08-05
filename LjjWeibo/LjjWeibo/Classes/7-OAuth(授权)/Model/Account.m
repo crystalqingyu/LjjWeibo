@@ -28,6 +28,7 @@
         self.expires_in = [aDecoder decodeInt64ForKey:@"expires_in"];
         self.remind_in = [aDecoder decodeInt64ForKey:@"remind_in"];
         self.uid = [aDecoder decodeInt64ForKey:@"uid"];
+        self.expires_time = [aDecoder decodeObjectForKey:@"expires_time"];
     }
     return self;
 }
@@ -37,6 +38,7 @@
     [aCoder encodeInt64:self.expires_in forKey:@"expires_in"];
     [aCoder encodeInt64:self.remind_in forKey:@"remind_in"];
     [aCoder encodeInt64:self.uid forKey:@"uid"];
+    [aCoder encodeObject:self.expires_time forKey:@"expires_time"];
 }
 
 @end

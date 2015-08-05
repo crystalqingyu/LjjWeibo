@@ -9,8 +9,9 @@
 #import "OAuthViewController.h"
 #import "AFNetworking.h"
 #import "Account.h"
-#import "LjjTabBarViewController.h"
-#import "NewFeatureViewController.h"
+#import "WeiboTool.h"
+#import "AccountTool.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface OAuthViewController () <UIWebViewDelegate>
 
@@ -32,6 +33,21 @@
 }
 
 #pragma mark - webview代理方法
+// webView开始发送请求时候调用
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    // 显示登陆框
+    [MBProgressHUD showMessage:@"姐正在帮你加载中..."];
+}
+// webView请求完毕调用
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    // 隐藏登陆框
+    [MBProgressHUD hideHUD];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    // 隐藏登陆框
+    [MBProgressHUD hideHUD];
+}
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSURL* url = request.URL;
@@ -83,22 +99,14 @@
         // 字典转为模型
         Account* account = [Account accountWithDict:responseObject];
         // 存储模型数据
-        NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-        NSString* accountPath = [docPath stringByAppendingPathComponent:@"account.data"];
-        [NSKeyedArchiver archiveRootObject:account toFile:accountPath];
-        // 判断有无新版本，下一步去向
-        // 取出当前版本号
-        NSString* version = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-        // 取出上一次登录版本号
-        NSString* lastVersion = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastVersion"];
-        if ([version isEqualToString:lastVersion]) { // 无新版本
-            self.view.window.rootViewController = [[LjjTabBarViewController alloc] init];;
-        } else { // 有新版本
-            self.view.window.rootViewController = [[NewFeatureViewController alloc] init];
-            // 存储版本号到userDefaults
-            [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"lastVersion"];
-        }
+        [AccountTool saveAccount:account];
+        // 选择控制器
+        [WeiboTool chooseRootController];
+        // 隐藏登陆框
+        [MBProgressHUD hideHUD];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // 隐藏登陆框
+        [MBProgressHUD hideHUD];
         NSLog(@"请求失败：%@",error);
     }];
 }

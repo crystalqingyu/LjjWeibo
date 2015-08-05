@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "LjjTabBarViewController.h"
-#import "NewFeatureViewController.h"
 #import "OAuthViewController.h"
 #import "Account.h"
+#import "WeiboTool.h"
+#import "AccountTool.h"
 
 @interface AppDelegate ()
 
@@ -24,27 +24,15 @@
     application.statusBarHidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    // 判断有无账号
-    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-    NSString* accountPath = [docPath stringByAppendingPathComponent:@"account.data"];
-    Account* account = [NSKeyedUnarchiver unarchiveObjectWithFile:accountPath];
-    NSLog(@"%@",accountPath);
+    [self.window makeKeyAndVisible];
+    // 返回当前账号
+    Account* account = [AccountTool account];
     if (!account) { // 无账号——授权页面
         self.window.rootViewController = [[OAuthViewController alloc] init];
     } else { // 有账号
-        // 取出当前版本号
-        NSString* version = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-        // 取出上一次登录版本号
-        NSString* lastVersion = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastVersion"];
-        if ([version isEqualToString:lastVersion]) { // 无新版本
-            self.window.rootViewController = [[LjjTabBarViewController alloc] init];;
-        } else { // 有新版本
-            self.window.rootViewController = [[NewFeatureViewController alloc] init];
-            // 存储版本号到userDefaults
-            [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"lastVersion"];
-        }
+        // 选择进入哪个控制器
+        [WeiboTool chooseRootController];
     }
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
