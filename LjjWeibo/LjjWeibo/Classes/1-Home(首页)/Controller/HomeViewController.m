@@ -9,11 +9,20 @@
 #import "HomeViewController.h"
 #import "UIBarButtonItem+Ljj.h"
 #import "LjjTitleButton.h"
+#import "AFNetworking.h"
+#import "AccountTool.h"
+#import "Account.h"
+#import "UIImageView+WebCache.h"
+#import "Statuse.h"
+#import "User.h"
+#import "MJExtension.h"
 
 #define kTitleButtonUpTag -1
 #define kTitleButtonDownTag 0
 
 @interface HomeViewController ()
+
+@property (nonatomic, strong) NSArray* statuses;
 
 @end
 
@@ -21,12 +30,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 设置导航栏内容
+    [self setupNavBar];
+    // 加载微博数据
+    [self setupStatusData];
+}
+
+// 设置导航栏内容
+- (void)setupNavBar {
     // 添加左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem  itemWithImageName:@"navigationbar_friendsearch" highlightedImageName:@"navigationbar_friendsearch_highlighted" action:@selector(clickFriendSearch) target: self];
-    
     // 添加右边按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem  itemWithImageName:@"navigationbar_pop" highlightedImageName:@"navigationbar_pop_highlighted" action:@selector(clickPop) target:self];
-    
     // 添加中间按钮
     LjjTitleButton* btn = [[LjjTitleButton alloc] init];
     btn.frame = CGRectMake(0, 0, 130, 40);
@@ -36,6 +51,36 @@
     self.navigationItem.titleView = btn;
     // 监听按钮
     [btn addTarget:self action:@selector(clickTitle:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+// 加载微博数据
+- (void)setupStatusData {
+    // AFNetworking/AFN
+    // 创建请求管理类
+    AFHTTPRequestOperationManager* mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 封装请求参数
+    NSMutableDictionary* params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [AccountTool account].access_token;
+    //params[@"count"] = @2;
+
+    // 发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        NSLog(@"请求成功：%@",responseObject);
+        NSArray* statuses = responseObject[@"statuses"];
+//        NSMutableArray* statuse_temp = [NSMutableArray array];
+//        for (NSDictionary* dict in statuses) {
+//            Statuse* statuse = [Statuse objectWithKeyValues:dict];
+//            [statuse_temp addObject:statuse];
+//        }
+//        // 获取微博数据
+//        self.statuses = statuse_temp;
+        self.statuses = [Statuse objectArrayWithKeyValuesArray:statuses];
+        // 刷新表格
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"请求失败：%@",error);
+    }];
 }
 
 // 快速创建一个显示图片的barButtonItem
@@ -72,16 +117,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.statuses.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString* cellID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    cell.textLabel.text = @"hahah";
+    // 显示微博内容
+    Statuse* statuse = self.statuses[indexPath.row];
+    cell.textLabel.text = statuse.text;
+    // 显示微博创建者
+    User* user = statuse.user;
+    cell.detailTextLabel.text = user.name;
+    // 加载微博头像
+    NSString* imageUrl = user.profile_image_url;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageWithName:@"tabbar_compose_button"]];
     
     return cell;
 }
